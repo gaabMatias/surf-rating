@@ -25,19 +25,20 @@
                 "./src/*"
             ],
             "@test/*": [
-                "./test/*"
+                ".src/test/*"
             ]
         },
         "rootDirs": [
             "./src",
-            "./test"
+            ".src/test"
         ],
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
     "include": [
         "./src/**/*.ts",
-        "./test/**/*.ts"
+        "./test/**/*.ts",
+        "stormglass.test.ts"
     ],
     "exclude": [
         "./node_modules/*",
