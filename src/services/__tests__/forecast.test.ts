@@ -11,8 +11,8 @@ describe('Forecast Service', () => {
             .mockResolvedValue(stormGlassNormalizedResponseFixture);
         const beaches: Beach[] = [
             {
-                lat: -33.792726,
-                lng: 151.289824,
+                latitude: -33.792726,
+                longitude: 151.289824,
                 name: 'Manly',
                 position: BeachPosition.E,
                 user: 'some-id',
@@ -20,8 +20,8 @@ describe('Forecast Service', () => {
         ];
         const expectedResponse = [
             {
-                lat: -33.792726,
-                lng: 151.289824,
+                latitude: -33.792726,
+                longitude: 151.289824,
                 name: 'Manly',
                 position: 'E',
                 rating: 1,
@@ -35,8 +35,8 @@ describe('Forecast Service', () => {
                 windSpeed: 100,
             },
             {
-                lat: -33.792726,
-                lng: 151.289824,
+                latitude: -33.792726,
+                longitude: 151.289824,
                 name: 'Manly',
                 position: 'E',
                 rating: 1,
@@ -50,8 +50,8 @@ describe('Forecast Service', () => {
                 windSpeed: 100,
             },
             {
-                lat: -33.792726,
-                lng: 151.289824,
+                latitude: -33.792726,
+                longitude: 151.289824,
                 name: 'Manly',
                 position: 'E',
                 rating: 1,
