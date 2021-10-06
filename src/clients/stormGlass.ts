@@ -69,12 +69,12 @@ export class StormGlass {
 
     constructor(protected request = new HTTPUtil.Request()) { }
 
-    public async fetchPoints(lat: number, lng: number): Promise<ForecastPoint[]> {
+    public async fetchPoints(latitude: number, longitude: number): Promise<ForecastPoint[]> {
         try {
             const response = await this.request.get<StormGlassForecastResponse>(
                 `${stormglassResourceConfig.get(
                     'apiUrl'
-                )}/weather/point?lat=${lat}&lng=${lng}&params=${this.stormGlassAPIParams
+                )}/weather/point?lat=${latitude}&lng=${longitude}&params=${this.stormGlassAPIParams
                 }&source=${this.stormGlassAPISource}`,
                 {
                     headers: {
@@ -83,7 +83,7 @@ export class StormGlass {
                 }
             );
             return this.normalizeResponse(response.data);
-        } catch (err) {
+        } catch (err: any) {
             if (HTTPUtil.Request.isRequestError(err)) {
                 throw new StormGlassResponseError(
                     `Error: ${JSON.stringify(err.response.data)} Code: ${err.response.status}`
