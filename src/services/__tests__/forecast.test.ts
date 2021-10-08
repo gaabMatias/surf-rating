@@ -1,3 +1,4 @@
+import { ForecastProcessInternalError } from './../forecast';
 import { StormGlassPointSource } from './../../clients/stormGlass';
 import { StormGlass } from '@src/clients/stormGlass';
 import stormGlassNormalizedResponseFixture from '../../../test/fixtures/stormglass_normalized_response_3_hours.json';
@@ -105,6 +106,6 @@ describe('Forecast Service', () => {
         )
         const forecast = new Forecast(mockedStormGlassService)
         await expect(forecast.processForecastForBeaches(beaches))
-            .rejects.toThrow(Error)
+            .rejects.toThrow(ForecastProcessInternalError)
     })
 });
