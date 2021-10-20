@@ -14,7 +14,6 @@ export interface Beach {
     position: BeachPosition;
     latitude: number;
     longitude: number;
-    user: string;
 }
 
 export interface TimeForecast {
@@ -22,7 +21,7 @@ export interface TimeForecast {
     forecast: BeachForecast[];
 }
 
-export interface BeachForecast extends Omit<Beach, 'user'>, ForecastPoint { }
+export interface BeachForecast extends Beach, ForecastPoint { }
 
 export class ForecastProcessInternalError extends InternalError {
     constructor(message: string) {
